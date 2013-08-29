@@ -80,6 +80,12 @@ cur_page = 200
 
 that is much more pretty than the origin pagebar display.
 
+Require
+=======
+
+must use django1.4 or higher, to use more powerful `{% if ...%}` tag.
+
+
 Howto
 =====
 
