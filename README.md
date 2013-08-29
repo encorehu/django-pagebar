@@ -79,3 +79,15 @@ cur_page = 200
     [Previous] [1...] [197] [198] [199] [200]
 
 that is much more pretty than the origin pagebar display.
+
+Howto
+=====
+
+if you want use pagebar, do as follow:
+
+- put the `pagebar_tags.py` in your `appname/templatetags` 
+- copy the `news_pagebar.html` to your `templates/appname/appname_pagebar.html` , just for rename,or keep same.
+- see `pagebar_tags.py` , `news_pagebar.html`, `news_list.html` for more detail usage.
+- any quetion, plz goto issues.- 
+
+it's very simple to use!
