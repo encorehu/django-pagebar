@@ -1,0 +1,31 @@
+{%load pagebar_tags %}
+{% if is_paginated %}
+
+	{% if page_obj.has_previous %}
+		<a href="?page={{page_obj.previous_page_number}}" class="pages_pre">&laquo;&nbsp;Previous</a>
+	{%endif%}
+
+	{% if page_obj.number > 4 %}
+		<a href="?page=1">1...</a>
+	{% endif %}
+
+	{% get_display_page_range paginator page_obj.number as display_page_range %}
+
+	{% for page_number in display_page_range %}
+		{% ifequal page_obj.number page_number %}
+			<strong>{{ page_number }}</strong>
+		{%else%}
+			<a href="?page={{ page_number }}">{{ page_number }}</a>
+		{%endifequal%}
+
+	{% endfor %}
+
+	{% if page_obj.number <= paginator.num_pages|add:"-4" %}
+		<a href="?page={{ paginator.num_pages }}">...{{ paginator.num_pages }}</a>
+	{% endif %}
+
+	{% if page_obj.has_next %}
+		<a href="?page={{page_obj.next_page_number}}" class="pages_next">Next&nbsp;&raquo;</a>
+	{%endif%}
+
+{% endif %}

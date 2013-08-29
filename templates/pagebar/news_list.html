@@ -1,0 +1,12 @@
+{% extends "news_base.html" %}
+{% load i18n %}
+
+{% block content%}
+
+{% for object in object_list %}
+<li><a href="{{ object.get_absolute_url }}" title="{{ object }}">{{ object }}</a></li>
+{% endfor %}
+
+{% block pagebar%}{%include "news_pagebar.html"%}{% endblock %}
+
+{% endblock %}
