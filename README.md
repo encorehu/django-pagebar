@@ -8,7 +8,7 @@ Origin
 
 django official display all pages by paginator and page_obj, like this:
 
-[1] [2] [3] [4] [5] [6] [7] ... [198] [199] [200] # total 200 pages for example.
+    [1] [2] [3] [4] [5] [6] [7] [...] [195] [196] [197] [198] [199] [200] # total 200 pages for example.
 
 use this code:
 
@@ -17,6 +17,9 @@ use this code:
     {% endfor %}
     
 ugly display all the pages of 200, even if you have 2000 pages, it will display 2000 links on one page.
+
+Modify
+======
 
 so, the problem is the paginator.page_range, if we can modify the paginator.page_range, the problem will fix.
 
@@ -51,7 +54,7 @@ cur_page = 6
 
     [Previous] [1...] [3] [4] [5] {6} [7] [8] [9] [...200] [Next]
 
-cur_page = x > 4, x < 200-4
+cur_page = x > 4, x <= 200-4
 
     [Previous] [1...] [x-3] [x-2] [x-1] {x} [x+1] [x+2] [x+3] [...200] [Next]
 
